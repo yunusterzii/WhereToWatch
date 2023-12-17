@@ -12,13 +12,13 @@ const MovieCard = () => {
         const element = await res.json();
         const movies = element.results;
         setInfos(movies.map((movie, key) => 
-            <Col key={key} style={{margin : "0", padding : "0", display : "flex"}}>
-                <Container style={{width : "18em", height : "32em", padding : "0", margin : "1.5em", background : "white"}}>
+            <Col key={key} style={{margin : "0", padding : "0", display : "flex", justifyContent: "center"}}>
+                <Container style={{width : "18rem", height : "32rem", padding : "0", margin : "1rem", background : "rgb(2, 38, 38)"}}>
                     <Row style={{margin : "0", padding : "0", display : "flex"}}>
                         <img style={{height : "%100", margin : "0", padding : "0", display : "flex"}} src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}></img>
                     </Row>
                     <Row style={{margin : "0", padding : "0", height : "%100"}}>
-                        <Link to={"/movie/" + movie.title + "&id=" + movie.id} style={{color: "black", textDecoration: "none", display : "flex", textAlign : "center", justifyContent : "center", font : "bold", fontSize : "1.5em"}}>{movie.title}</Link>
+                        <Link to={"/movie/" + movie.title + "&id=" + movie.id} style={{color: "white", textDecoration: "none", display : "flex", textAlign : "center", justifyContent : "center", font : "bold", fontSize : "1.25em", marginTop: "1rem"}}>{movie.title}</Link>
                     </Row>
                 </Container>
             </Col>
@@ -31,7 +31,7 @@ const MovieCard = () => {
     }, [lang]);
 
     return(
-        <Row fluid style={{background : "rgb(217, 228, 241)"}}>
+        <Row style={{background : "rgb(2, 46, 48)", width: "100vw", margin: "0", padding: "0"}}>
             {infos}
         </Row>
     )

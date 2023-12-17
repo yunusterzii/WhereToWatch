@@ -18,7 +18,7 @@ const StreamingCard = ({id}) => {
             list.push(element);
         });
         setMapped(list.map((provider, key) => 
-            <Image key={key} style={{height: "6em", marginTop: "2em", marginRight : "0.5em"}} className="border" rounded src={"https://image.tmdb.org/t/p/original/" + provider.logo_path}></Image>));  
+            <Image key={key} style={{height: "6em", marginTop: "2em", marginRight : "0.5em", border: "none"}} rounded src={"https://image.tmdb.org/t/p/original/" + provider.logo_path}></Image>));  
     }
 
     useEffect(() => {

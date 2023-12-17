@@ -14,14 +14,14 @@ const SearchList = () => {
         const res = await fetch(url);
         const data = await res.json();
         setListItems(data.results.map((element, key) => 
-        <Row key={key} className="d-flex justify-content-center m-auto" style={{background: "rgb(217, 228, 241)"}}>
-            <Card className="mx-4 my-2 rounded" style={{width : "80vw"}}>
+        <Row key={key} className="d-flex justify-content-center m-auto" style={{background: "rgb(2, 46, 48)"}}>
+            <Card className="mx-4 my-2 rounded" style={{width : "80vw", background: "rgb(2, 38, 38)"}}>
                 <Card.Body>
                     <Row>
                         <Col xs={8}>
-                            <Card.Title><Link style={{color: "black", textDecoration: "none"}} to={"/movie/" + element.title + "&id=" + element.id}>{element.title}</Link></Card.Title>
-                            <Card.Text> {element.release_date.split("-")[0]} </Card.Text>
-                            <Card.Text> {element.overview} </Card.Text>
+                            <Card.Title><Link style={{color: "white", textDecoration: "none"}} to={"/movie/" + element.title + "&id=" + element.id}>{element.title}</Link></Card.Title>
+                            <Card.Text style={{color: "white"}}> {element.release_date.split("-")[0]} </Card.Text>
+                            <Card.Text style={{color: "white"}}> {element.overview} </Card.Text>
                             <StreamingCard id={element.id}/>
                         </Col>
                         <Col xs={4} style={{display: "flex", justifyContent: "right"}}>
